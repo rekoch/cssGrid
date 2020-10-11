@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@mixin col-x ($breakpoint: null){
+    @for $i from 0 to 12 {
+        @if($breakpoint) {
+            .col-#{$breakpoint}-#{$i+1} {
+                grid-column: span #{$i+1};
+            }
+
+        } @else {
+            .col-#{$i+1} {
+                grid-column: span #{$i+1};
+            }
+        }
+    }
+}
+
+@include col-x;
+
+@media(min-width: 700px) {
+    @include col-x('m')  
+}
+
+.row {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 150px repeat(12, 1fr) 150px;
+}

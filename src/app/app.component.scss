@@ -1,0 +1,18 @@
+@media(max-width: 699.99px) {
+    .col-12 {
+        grid-column: 2 / span 12;
+    }
+}
+
+@media(min-width: 700px) {
+    .col-m-4:nth-child(3n+1) {
+        grid-column: 2 / span 4;
+    }
+}
+
+.aside {
+    grid-column: 1;
+    grid-row: span 2;
+    align-content: center;
+    place-self: center;
+}
